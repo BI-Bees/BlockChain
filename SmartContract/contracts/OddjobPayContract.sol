@@ -1,16 +1,14 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.5.0;
 
-contract OddjobPayContract 
-{
-    address public deployer;
+contract OddjobPayContract {
+    address payable public deployer;
 
-    address public client;
-    address public tasker;
+    address payable public client;
+    address payable public tasker;
 
     uint256 public payAmount;
 
-    constructor (address _client, address _tasker) public 
-    {
+    constructor (address payable _client, address payable _tasker) public {
         deployer = msg.sender;
 
         client = _client;
@@ -19,12 +17,12 @@ contract OddjobPayContract
         payAmount = 0;
     }
 
-    function () public payable {
+    function sendPaytoDeployer() public payable {
         require(client == msg.sender);
         payAmount += msg.value;
     }
 
-    function sendPayAmountToTasker() public {
+    function sendPayAmountToTasker() public payable {
         require(deployer == msg.sender);
 
         // transfer pay amount to tasker

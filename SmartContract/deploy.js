@@ -57,12 +57,12 @@ const run = async () => {
   SmartContract.setProvider(web3.currentProvider);
 
   const smartContract = await SmartContract.new(
-    client, tasker, { gas: 10, from: deployer }
+    client, tasker, { gas: 1000000, from: deployer }
   )
 
   await printBalancesToConsole()
     console.log(`here1`)
-  await smartContract.sendTransaction({ from: client, value: web3.utils.toWei(0.1, 'ether') })
+  await smartContract.sendPaytoDeployer({ from: client, value: web3.utils.toWei("1", 'ether'), gas: "60000" })
   console.log(`here2`)
   await printBalancesToConsole()
   console.log(`here3`)

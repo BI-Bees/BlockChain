@@ -24,7 +24,7 @@ For at kunne køre demo korrekt, skal man ifølge instruktion:
 *Kodeord for Tasker: passwordfortasker* <br/>
 **Bemærk**, man skal vælge den rigtig keyfil og derefter indtaste kodeord. Alle keyfile ligger under mappe `Keys`.
 
-Nu har du lavet en smart kontrakt på blockchain <br/>
+Nu har man lavet en smart kontrakt på blockchain <br/>
 **Bemærk**, for at ikke give fejl i programmet, skal man huske at tjekke saldo på brugere. Man kan ikke lave en kontrakt heller ikke en transaktion på blockchain.
 
 ## Sources

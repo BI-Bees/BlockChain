@@ -1,4 +1,5 @@
 # BlockChain
+This is a project made in collaboration with students from the business course.
 
 This project contains two distinct elements:
 

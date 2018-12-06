@@ -7,7 +7,8 @@ This project contains three distinct elements:
 This part is a small blockchain demo that demonstrates how smart contracts are suposed to work. 
 
 ## Video for Demo
-Our business group decided that they wanted a video demonstration of the demo, so this is also included inside. 
+Our business group decided that they wanted a video demonstration of the demo, so this is also included inside.
+
 Link: https://drive.google.com/open?id=16pkdwhIkgmAShf7SOq_LVg-R-rL0jtrD
 
 ## Research for Blockchain Vulnerabilities

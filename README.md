@@ -8,6 +8,7 @@ This part is a small blockchain demo that demonstrates how smart contracts are s
 
 ## Video for Demo
 Our business group decided that they wanted a video demonstration of the demo, so this is also included inside. 
+Link: https://drive.google.com/open?id=16pkdwhIkgmAShf7SOq_LVg-R-rL0jtrD
 
 ## Research for Blockchain Vulnerabilities
 Google Docs: https://docs.google.com/document/d/1I8PuJ5Kq8p98-AUKFh6z8G1N16YiVvWagQTUxW7-BOU/edit?usp=sharing

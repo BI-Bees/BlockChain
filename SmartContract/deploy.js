@@ -1,9 +1,8 @@
 const Web3 = require('web3')
 const contract = require('truffle-contract')
-//const SmartContract = contract(require('./build/contracts/OddjobPayContract'))
 
 const fs = require('fs');
-const fileContents = fs.readFileSync('./build/contracts/OddjobPayContract.json', 'utf8');
+const fileContents = fs.readFileSync('./build/contracts/SmartContractDemo.json', 'utf8');
 const contractArtifacts = JSON.parse(fileContents);
 const SmartContract = contract(contractArtifacts);
 
@@ -60,16 +59,20 @@ const run = async () => {
     client, tasker, { gas: 1000000, from: deployer }
   )
 
+  console.log(`Deploying Smart contract...`)
+  console.log(`Current balances in all accounts`)
   await printBalancesToConsole()
-    console.log(`here1`)
+  console.log(`Sending payment to contract...`)  
   await smartContract.sendPaytoDeployer({ from: client, value: web3.utils.toWei("1", 'ether'), gas: "60000" })
-  console.log(`here2`)
-  await printBalancesToConsole()
-  console.log(`here3`)
+  console.log(`Transaction is complete. Payment has been successfully processed`)
+  
+  console.log(`Wait...1...2...3...`)
+  console.log(`After completing job`)
+  console.log(`Sending payment to Tasker...`)
   await smartContract.sendPayAmountToTasker({ from: deployer })
-  console.log(`here4`)
+  console.log(`Transaction is complete. Payment has been successfully processed`)
+  console.log(`Balances after completing the contract`)
   await printBalancesToConsole()
-  console.log(`here5`)
 }
 
 run()

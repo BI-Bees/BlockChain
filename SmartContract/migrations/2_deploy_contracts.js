@@ -1,5 +1,5 @@
-const OddjobPayContract = artifacts.require('OddjobPayContract')
+const SmartContractDemo = artifacts.require('SmartContractDemo')
 
 module.exports = (deployer, _, accounts) => {
-  deployer.deploy(OddjobPayContract, accounts[1], accounts[2], { from: accounts[0] })
+  deployer.deploy(SmartContractDemo, accounts[1], accounts[2], { from: accounts[0] })
 }

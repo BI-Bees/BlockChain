@@ -1,5 +1,5 @@
 {
-  "contractName": "OddjobPayContract",
+  "contractName": "SmartContractDemo",
   "abi": [
     {
       "constant": true,
@@ -95,12 +95,12 @@
   "deployedBytecode": "0x608060405260043610610072576000357c010000000000000000000000000000000000000000000000000000000090048063109e94cf1461007757806382faef25146100ce578063a0e7999b14610125578063c87055441461012f578063d5f394881461015a578063e239aa04146101b1575b600080fd5b34801561008357600080fd5b5061008c6101bb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100da57600080fd5b506100e36101e1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61012d610207565b005b34801561013b57600080fd5b50610144610275565b6040518082815260200191505060405180910390f35b34801561016657600080fd5b5061016f61027b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101b96102a0565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b3373ffffffffffffffffffffffffffffffffffffffff16600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614151561026357600080fd5b34600360008282540192505081905550565b60035481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b3373ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415156102fb57600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc6003549081150290604051600060405180830381858888f19350505050158015610365573d6000803e3d6000fd5b50600060038190555056fea165627a7a7230582048e9298b87ccd1f090aa8e76fe7457509af89c277a50f2550b8c98af3f2653410029",
   "sourceMap": "25:731:1:-;;;198:185;8:9:-1;5:2;;;30:1;27;20:12;5:2;198:185:1;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;198:185:1;;;;;;;;;;;;;;;;;;;;;;;;;289:10;278:8;;:21;;;;;;;;;;;;;;;;;;319:7;310:6;;:16;;;;;;;;;;;;;;;;;;345:7;336:6;;:16;;;;;;;;;;;;;;;;;;375:1;363:9;:13;;;;198:185;;25:731;;;;;;",
   "deployedSourceMap": "25:731:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;96:29;;8:9:-1;5:2;;;30:1;27;20:12;5:2;96:29:1;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;131;;8:9:-1;5:2;;;30:1;27;20:12;5:2;131:29:1;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;389:122;;;:::i;:::-;;167:24;;8:9:-1;5:2;;;30:1;27;20:12;5:2;167:24:1;;;:::i;:::-;;;;;;;;;;;;;;;;;;;58:31;;8:9:-1;5:2;;;30:1;27;20:12;5:2;58:31:1;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;517:237;;;:::i;:::-;;96:29;;;;;;;;;;;;;:::o;131:::-;;;;;;;;;;;;;:::o;389:122::-;461:10;451:20;;:6;;;;;;;;;;;:20;;;443:29;;;;;;;;495:9;482;;:22;;;;;;;;;;;389:122::o;167:24::-;;;;:::o;58:31::-;;;;;;;;;;;;;:::o;517:237::-;595:10;583:22;;:8;;;;;;;;;;;:22;;;575:31;;;;;;;;658:6;;;;;;;;;;;:15;;:26;674:9;;658:26;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;658:26:1;746:1;734:9;:13;;;;517:237::o",
-  "source": "pragma solidity ^0.5.0;\n\ncontract OddjobPayContract {\n    address payable public deployer;\n\n    address payable public client;\n    address payable public tasker;\n\n    uint256 public payAmount;\n\n    constructor (address payable _client, address payable _tasker) public {\n        deployer = msg.sender;\n\n        client = _client;\n        tasker = _tasker;\n\n        payAmount = 0;\n    }\n\n    function sendPaytoDeployer() public payable {\n        require(client == msg.sender);\n        payAmount += msg.value;\n    }\n\n    function sendPayAmountToTasker() public payable {\n        require(deployer == msg.sender);\n\n        // transfer pay amount to tasker\n        tasker.transfer(payAmount);\n\n        // nullify pay amount manually\n        payAmount = 0;\n    }\n}",
-  "sourcePath": "/Users/Stormwind/SmartContract/contracts/OddjobPayContract.sol",
+  "source": "pragma solidity ^0.5.0;\n\ncontract SmartContractDemo {\n    address payable public deployer;\n\n    address payable public client;\n    address payable public tasker;\n\n    uint256 public payAmount;\n\n    constructor (address payable _client, address payable _tasker) public {\n        deployer = msg.sender;\n\n        client = _client;\n        tasker = _tasker;\n\n        payAmount = 0;\n    }\n\n    function sendPaytoDeployer() public payable {\n        require(client == msg.sender);\n        payAmount += msg.value;\n    }\n\n    function sendPayAmountToTasker() public payable {\n        require(deployer == msg.sender);\n\n        // transfer pay amount to tasker\n        tasker.transfer(payAmount);\n\n        // nullify pay amount manually\n        payAmount = 0;\n    }\n}",
+  "sourcePath": "/Users/Stormwind/SmartContract/contracts/SmartContractDemo.sol",
   "ast": {
-    "absolutePath": "/Users/Stormwind/SmartContract/contracts/OddjobPayContract.sol",
+    "absolutePath": "/Users/Stormwind/SmartContract/contracts/SmartContractDemo.sol",
     "exportedSymbols": {
-      "OddjobPayContract": [
+      "SmartContractDemo": [
         129
       ]
     },
@@ -128,7 +128,7 @@
         "linearizedBaseContracts": [
           129
         ],
-        "name": "OddjobPayContract",
+        "name": "SmartContractDemo",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
@@ -998,9 +998,9 @@
     "src": "0:756:1"
   },
   "legacyAST": {
-    "absolutePath": "/Users/Stormwind/SmartContract/contracts/OddjobPayContract.sol",
+    "absolutePath": "/Users/Stormwind/SmartContract/contracts/SmartContractDemo.sol",
     "exportedSymbols": {
-      "OddjobPayContract": [
+      "SmartContractDemo": [
         129
       ]
     },
@@ -1028,7 +1028,7 @@
         "linearizedBaseContracts": [
           129
         ],
-        "name": "OddjobPayContract",
+        "name": "SmartContractDemo",
         "nodeType": "ContractDefinition",
         "nodes": [
           {

@@ -1,6 +1,6 @@
 pragma solidity ^0.5.0;
 
-contract OddjobPayContract {
+contract SmartContractDemo {
     address payable public deployer;
 
     address payable public client;
